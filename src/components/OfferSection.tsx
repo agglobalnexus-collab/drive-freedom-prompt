@@ -1,24 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Check, Shield, ArrowRight } from "lucide-react";
-
 const OfferSection = () => {
   const scrollToCheckout = () => {
     window.open('https://pay.kiwify.com.br/f1hS5iq', '_blank');
   };
-
-  const benefits = [
-    "Acesso imediato ao curso completo",
-    "Técnicas psicológicas comprovadas",
-    "Exercícios práticos guiados",
-    "Comunidade exclusiva de alunas",
-    "Suporte especializado",
-    "Atualizações gratuitas",
-    "Acesso vitalício ao conteúdo",
-    "Certificado de conclusão"
-  ];
-
-  return (
-    <section id="oferta" className="py-20 px-4 bg-gradient-to-br from-background via-accent/5 to-background">
+  const benefits = ["Acesso imediato ao curso completo", "Técnicas psicológicas comprovadas", "Exercícios práticos guiados", "Comunidade exclusiva de alunas", "Suporte especializado", "Atualizações gratuitas", "Acesso vitalício ao conteúdo", "Certificado de conclusão"];
+  return <section id="oferta" className="py-20 px-4 bg-gradient-to-br from-background via-accent/5 to-background">
       <div className="container max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -51,24 +38,19 @@ const OfferSection = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-3 mb-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-3">
+              {benefits.map((benefit, index) => <div key={index} className="flex items-center gap-3">
                   <div className="w-6 h-6 bg-accent/20 rounded-full flex items-center justify-center flex-shrink-0">
                     <Check className="w-4 h-4 text-accent" />
                   </div>
                   <span className="text-foreground">{benefit}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
             
-            <Button 
-              size="lg" 
-              onClick={scrollToCheckout}
-              className="w-full bg-accent hover:bg-accent/90 text-foreground font-bold py-6 px-4 text-sm md:text-xl shadow-[0_10px_30px_-5px_hsl(var(--gold)/0.4)] hover:shadow-[0_15px_40px_-5px_hsl(var(--gold)/0.5)] transition-all duration-300 hover:scale-[1.02]"
-            >
+            <Button size="lg" onClick={scrollToCheckout} className="w-full bg-accent hover:bg-accent/90 text-foreground font-bold py-6 px-4 text-sm md:text-xl shadow-[0_10px_30px_-5px_hsl(var(--gold)/0.4)] hover:shadow-[0_15px_40px_-5px_hsl(var(--gold)/0.5)] transition-all duration-300 hover:scale-[1.02]">
               <span className="flex items-center justify-center gap-1 md:gap-2 text-center leading-tight">
                 <span className="hidden md:inline">Sim, quero conquistar minha liberdade agora</span>
-                <span className="md:hidden">Quero conquistar minha liberdade</span>
+                <span className="md:hidden">Quero conquistar
+minha liberdade</span>
                 <ArrowRight className="h-4 w-4 md:h-6 md:w-6 flex-shrink-0" />
               </span>
             </Button>
@@ -96,8 +78,6 @@ const OfferSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default OfferSection;
