@@ -20,7 +20,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight max-w-4xl mx-auto">
-            Elimine o <span className="text-accent">medo de dirigir</span> e conquiste sua liberdade no volante
+            Supere o <span className="text-accent">medo de dirigir</span> e conquiste sua liberdade no volante
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
