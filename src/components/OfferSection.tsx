@@ -46,12 +46,11 @@ const OfferSection = () => {
                 </div>)}
             </div>
             
-            <Button size="lg" onClick={scrollToCheckout} className="w-full bg-accent hover:bg-accent/90 text-foreground font-bold py-6 px-4 text-sm md:text-xl shadow-[0_10px_30px_-5px_hsl(var(--gold)/0.4)] hover:shadow-[0_15px_40px_-5px_hsl(var(--gold)/0.5)] transition-all duration-300 hover:scale-[1.02]">
-              <span className="flex items-center justify-center gap-1 md:gap-2 text-center leading-tight">
+            <Button size="lg" onClick={scrollToCheckout} className="w-full bg-accent hover:bg-accent/90 text-foreground font-bold py-4 md:py-6 px-3 md:px-4 text-xs md:text-xl shadow-[0_10px_30px_-5px_hsl(var(--gold)/0.4)] hover:shadow-[0_15px_40px_-5px_hsl(var(--gold)/0.5)] transition-all duration-300 hover:scale-[1.02]">
+              <span className="flex items-center justify-center gap-1 md:gap-2 text-center leading-tight w-full">
                 <span className="hidden md:inline">Sim, quero conquistar minha liberdade agora</span>
-                <span className="md:hidden">Quero conquistar
-minha liberdade</span>
-                <ArrowRight className="h-4 w-4 md:h-6 md:w-6 flex-shrink-0" />
+                <span className="md:hidden">Quero minha liberdade</span>
+                <ArrowRight className="h-3 w-3 md:h-6 md:w-6 flex-shrink-0" />
               </span>
             </Button>
             
