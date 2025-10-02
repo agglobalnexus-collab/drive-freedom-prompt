@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
-  const scrollToOffer = () => {
-    document.getElementById('oferta')?.scrollIntoView({ behavior: 'smooth' });
+  const handleCTA = () => {
+    window.open('https://pay.kiwify.com.br/f1hS5iq', '_blank');
   };
 
   return (
@@ -30,11 +30,13 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button 
               size="lg" 
-              onClick={scrollToOffer}
-              className="bg-accent hover:bg-accent/90 text-foreground font-bold px-8 py-6 text-lg shadow-[0_10px_30px_-5px_hsl(var(--gold)/0.3)] hover:shadow-[0_15px_40px_-5px_hsl(var(--gold)/0.4)] transition-all duration-300 hover:scale-105"
+              onClick={handleCTA}
+              className="bg-accent hover:bg-accent/90 text-foreground font-bold px-6 py-6 text-base md:text-lg shadow-[0_10px_30px_-5px_hsl(var(--gold)/0.3)] hover:shadow-[0_15px_40px_-5px_hsl(var(--gold)/0.4)] transition-all duration-300 hover:scale-105"
             >
-              Quero vencer o medo de dirigir agora
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <span className="flex items-center justify-center gap-2">
+                Quero vencer o medo de dirigir agora
+                <ArrowRight className="h-5 w-5 flex-shrink-0" />
+              </span>
             </Button>
           </div>
           

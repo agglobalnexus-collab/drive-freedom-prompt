@@ -3,7 +3,7 @@ import { Check, Shield, ArrowRight } from "lucide-react";
 
 const OfferSection = () => {
   const scrollToCheckout = () => {
-    window.open('https://pay.hotmart.com/YOUR_LINK_HERE', '_blank');
+    window.open('https://pay.kiwify.com.br/f1hS5iq', '_blank');
   };
 
   const benefits = [
@@ -64,10 +64,12 @@ const OfferSection = () => {
             <Button 
               size="lg" 
               onClick={scrollToCheckout}
-              className="w-full bg-accent hover:bg-accent/90 text-foreground font-bold py-6 text-xl shadow-[0_10px_30px_-5px_hsl(var(--gold)/0.4)] hover:shadow-[0_15px_40px_-5px_hsl(var(--gold)/0.5)] transition-all duration-300 hover:scale-[1.02]"
+              className="w-full bg-accent hover:bg-accent/90 text-foreground font-bold py-6 px-4 text-base md:text-xl shadow-[0_10px_30px_-5px_hsl(var(--gold)/0.4)] hover:shadow-[0_15px_40px_-5px_hsl(var(--gold)/0.5)] transition-all duration-300 hover:scale-[1.02]"
             >
-              Sim, quero conquistar minha liberdade agora
-              <ArrowRight className="ml-2 h-6 w-6" />
+              <span className="flex items-center justify-center gap-2">
+                Sim, quero conquistar minha liberdade agora
+                <ArrowRight className="h-5 w-5 md:h-6 md:w-6 flex-shrink-0" />
+              </span>
             </Button>
             
             <div className="mt-8 p-6 bg-primary/5 rounded-2xl border-2 border-primary/20">
