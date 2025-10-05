@@ -1,38 +1,54 @@
+import { AlertCircle } from "lucide-react";
+
 const ProblemSection = () => {
   const problems = [
-    "Sentir-se dependente do marido, filho ou de aplicativos de Uber para tarefas simples do dia a dia?",
-    "Sentir ansiedade extrema, coração acelerado ou as mãos suando só de pensar em pegar no volante?",
-    "Ter vergonha de admitir que tem CNH há anos e nunca dirigiu sozinha?",
-    "Perder oportunidades profissionais ou não conseguir acompanhar os filhos na rotina por falta de autonomia?",
-    "Já tentou aulas de autoescola ou instrutores e o medo sempre voltou?"
+    "Depende do marido, amigos ou Uber para ir a qualquer lugar",
+    "Sente vergonha por ter CNH e não dirigir",
+    "Ansiedade só de pensar em pegar o volante",
+    "Já tentou autoescola ou instrutores e não funcionou",
+    "Perdeu oportunidades de trabalho por não dirigir",
+    "Sente-se presa e sem liberdade no dia a dia"
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8">
+    <section className="py-20 px-4 bg-muted/30">
       <div className="container max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10 text-foreground">
-          Você se identifica com algum desses sentimentos?
-        </h2>
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-destructive/10 text-destructive rounded-full mb-6">
+            <AlertCircle className="w-4 h-4" />
+            <span className="font-semibold text-sm">Você se identifica com isso?</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            O medo de dirigir está limitando sua vida?
+          </h2>
+        </div>
         
-        <p className="text-xl text-center text-muted-foreground mb-8">
-          <strong>Eu sei o que você está sentindo.</strong> A ansiedade e a vergonha de não dirigir, mesmo com CNH, criam um ciclo vicioso que te aprisiona. É por isso que o Método MASD atua na raiz emocional e não apenas na prática.
-        </p>
-
-        <ul className="space-y-5 text-lg text-muted-foreground">
+        <div className="grid md:grid-cols-2 gap-4 mb-8">
           {problems.map((problem, index) => (
-            <li key={index} className="flex items-start">
-              <span className="mr-3 text-2xl text-destructive font-bold leading-none">🚫</span>
-              <p dangerouslySetInnerHTML={{ 
-                __html: problem.replace(/Uber|ansiedade extrema|dirigiu sozinha|oportunidades profissionais|sempre voltou/g, 
-                  '<span class="text-accent-gold font-bold">$&</span>') 
-              }} />
-            </li>
+            <div 
+              key={index}
+              className="bg-card p-6 rounded-lg shadow-sm border border-border hover:shadow-md transition-all duration-300"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="flex items-start gap-3">
+                <div className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-2 h-2 bg-destructive rounded-full" />
+                </div>
+                <p className="text-foreground">{problem}</p>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
         
-        <p className="text-2xl font-extrabold text-center mt-12 text-accent-green-dark">
-          Se você sente isso, saiba que não está sozinha. Milhares de mulheres passam pelo mesmo e o problema não é você, mas sim o método!
-        </p>
+        <div className="text-center mt-12">
+          <p className="text-xl md:text-2xl font-semibold text-foreground">
+            Se você sente isso, saiba que{" "}
+            <span className="text-accent">não está sozinha</span>.
+          </p>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+            Milhares de mulheres já superaram esse medo e conquistaram sua independência. Agora é a sua vez.
+          </p>
+        </div>
       </div>
     </section>
   );
