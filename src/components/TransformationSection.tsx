@@ -1,71 +1,65 @@
-import { Car, Heart, Briefcase, Sparkles } from "lucide-react";
+import { Car, MapPin, Wallet } from "lucide-react";
 
 const TransformationSection = () => {
   const transformations = [
     {
       icon: Car,
-      title: "Liberdade Total",
-      description: "Vá onde quiser, quando quiser, sem depender de ninguém"
+      title: "Independência Total",
+      description: "Levar os filhos na escola, ir ao mercado ou buscar a família no aeroporto, tudo sem depender de terceiros."
     },
     {
-      icon: Heart,
-      title: "Confiança no Volante",
-      description: "Dirija com segurança e tranquilidade, sem ansiedade"
+      icon: MapPin,
+      title: "Viajar sem Medo",
+      description: "Fazer aquela viagem de carro que sempre sonhou, com zero ansiedade e confiança total em qualquer estrada."
     },
     {
-      icon: Briefcase,
-      title: "Novas Oportunidades",
-      description: "Aceite aquele emprego ou projeto que exige mobilidade"
-    },
-    {
-      icon: Sparkles,
-      title: "Economia e Praticidade",
-      description: "Economize com Uber e tenha total autonomia no dia a dia"
+      icon: Wallet,
+      title: "Economia Inteligente",
+      description: "Diga adeus aos gastos diários com Uber/Táxi e direcione esse dinheiro para o que realmente importa."
     }
   ];
 
+  const scrollToOffer = () => {
+    const offerSection = document.getElementById('oferta-irresistivel');
+    if (offerSection) {
+      offerSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-background to-primary/5">
-      <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Imagine sua vida com{" "}
-            <span className="text-accent">total liberdade</span> para dirigir
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            É hora de transformar o medo em confiança e conquistar a independência que você merece
-          </p>
-        </div>
+    <section className="py-16 px-4 md:px-8 bg-secondary-dark">
+      <div className="container max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-10 text-foreground">
+          Imagine sua vida daqui a 30 dias...
+        </h2>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          {transformations.map((item, index) => {
-            const Icon = item.icon;
+        <p className="text-xl text-center text-muted-foreground mb-8">
+          Após aplicar o <strong>Método MASD</strong>, você não só irá dirigir, mas irá sentir uma <span className="text-accent-gold font-bold">confiança inabalável</span> e uma verdadeira <strong>liberdade</strong> para ir e vir.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6 mt-8">
+          {transformations.map((transformation, index) => {
+            const Icon = transformation.icon;
             return (
-              <div 
-                key={index}
-                className="bg-card p-8 rounded-2xl shadow-[0_10px_40px_-10px_hsl(var(--green-dark)/0.15)] border border-border hover:shadow-[0_15px_50px_-10px_hsl(var(--green-dark)/0.2)] transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
-                  <Icon className="w-7 h-7 text-accent" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground">
-                  {item.description}
-                </p>
+              <div key={index} className="p-5 bg-card border-b-4 border-accent-green-dark rounded-lg shadow-lg">
+                <Icon className="text-accent-green-dark w-6 h-6 mb-3" />
+                <h4 className="text-xl font-semibold mb-2 text-foreground">{transformation.title}</h4>
+                <p className="text-muted-foreground" dangerouslySetInnerHTML={{ 
+                  __html: transformation.description.replace(/sem depender de terceiros|zero ansiedade|Uber\/Táxi/g, 
+                    '<span class="text-accent-gold font-bold">$&</span>') 
+                }} />
               </div>
             );
           })}
         </div>
-        
-        <div className="mt-16 p-8 bg-accent/5 border-l-4 border-accent rounded-lg">
-          <p className="text-lg md:text-xl text-foreground font-medium">
-            ✓ Levar seus filhos na escola sem depender de ninguém<br/>
-            ✓ Viajar sem medo e com total autonomia<br/>
-            ✓ Assumir oportunidades profissionais que antes não podia<br/>
-            ✓ Sentir-se orgulhosa e confiante ao volante
-          </p>
+
+        <div className="text-center mt-12">
+          <button 
+            onClick={scrollToOffer}
+            className="inline-block px-10 py-4 bg-accent-green-dark text-accent-gold font-extrabold text-xl rounded-lg shadow-xl hover:bg-accent-green-dark/90 transition duration-300 transform hover:scale-[1.02] uppercase"
+          >
+            Sim! Eu quero essa transformação em 30 dias!
+          </button>
         </div>
       </div>
     </section>

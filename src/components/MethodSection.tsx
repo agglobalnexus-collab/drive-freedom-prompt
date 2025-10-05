@@ -1,91 +1,77 @@
-import { Brain, Target, BookOpen, Users } from "lucide-react";
+import { Shield, Heart, MessageSquare, Users } from "lucide-react";
 
 const MethodSection = () => {
   const features = [
     {
-      icon: Brain,
+      icon: Shield,
       title: "Técnicas de Controle da Ansiedade",
-      description: "Aprenda a gerenciar seus pensamentos e emoções antes e durante a direção"
+      description: "Específicas para o trânsito."
     },
     {
-      icon: Target,
+      icon: Heart,
       title: "Reprogramação Emocional",
-      description: "Trabalhe a raiz do medo e transforme sua relação com o volante"
+      description: "Contra o medo, a vergonha e os traumas."
     },
     {
-      icon: BookOpen,
-      title: "Exercícios Guiados",
-      description: "Passo a passo para se preparar emocionalmente antes da prática"
+      icon: MessageSquare,
+      title: "Exercícios Mentais e Guiados",
+      description: "Para se preparar antes da prática no carro."
     },
     {
       icon: Users,
       title: "Comunidade Exclusiva",
-      description: "Troque experiências com outras alunas e receba apoio constante"
+      description: "De alunas no WhatsApp para apoio mútuo."
     }
   ];
 
+  const scrollToOffer = () => {
+    const offerSection = document.getElementById('oferta-irresistivel');
+    if (offerSection) {
+      offerSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="py-20 px-4 bg-background">
-      <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full mb-6">
-            <span className="font-semibold text-sm">O Método</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            O que é o <span className="text-accent">Método MASD</span>?
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Um método psicológico e prático que atua na <strong className="text-foreground">raiz emocional do medo</strong>, 
-            não apenas na técnica de direção. É assim que você conquista resultados reais e duradouros.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div 
-                key={index}
-                className="group bg-card p-8 rounded-2xl border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-[0_10px_40px_-10px_hsl(var(--gold)/0.2)]"
-              >
-                <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors duration-300">
-                  <Icon className="w-8 h-8 text-accent" />
+    <section id="masd-conteudo" className="py-16 px-4 md:px-8 bg-secondary-dark">
+      <div className="container max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-10 text-foreground">
+          O que você vai aprender no Método MASD?
+        </h2>
+        <p className="text-xl text-center text-muted-foreground mb-12">
+          O MASD é um método <span className="text-accent-gold font-bold">psicológico e prático</span> que atua na <strong>raiz emocional do medo</strong>, e não apenas nos sintomas. Você terá um mapa claro para a sua superação:
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-card p-6 rounded-lg shadow-xl border-l-4 border-accent-gold space-y-4">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div key={index} className="flex items-start">
+                  <Icon className="text-accent-gold mt-1 mr-3 w-6 h-6 flex-shrink-0" />
+                  <p className="text-lg font-semibold text-foreground">
+                    {feature.title} <span className="font-normal text-muted-foreground">({feature.description})</span>
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground">
-                  {feature.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-        
-        <div className="bg-gradient-to-br from-accent/10 to-primary/5 p-8 md:p-12 rounded-3xl border border-accent/20">
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-              Não é só sobre aprender a dirigir...
-            </h3>
-            <p className="text-lg text-muted-foreground mb-8">
-              É sobre transformar sua relação com o medo, conquistar confiança e liberdade. 
-              O Método MASD trabalha o lado psicológico que nenhuma autoescola ensina.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-4xl font-bold text-accent mb-2">100%</div>
-                <div className="text-sm text-muted-foreground">Online e no seu ritmo</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-accent mb-2">7 dias</div>
-                <div className="text-sm text-muted-foreground">Garantia incondicional</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-accent mb-2">24/7</div>
-                <div className="text-sm text-muted-foreground">Acesso vitalício</div>
-              </div>
-            </div>
+              );
+            })}
           </div>
+
+          <div className="rounded-xl overflow-hidden shadow-2xl">
+            <img 
+              src="https://placehold.co/400x300/FACC15/047857?text=Liberdade+no+Volante" 
+              alt="Mulher dirigindo com confiança" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="text-center mt-12">
+          <button 
+            onClick={scrollToOffer}
+            className="inline-block px-10 py-4 bg-accent-green-dark text-accent-gold font-extrabold text-xl rounded-lg shadow-xl hover:bg-accent-green-dark/90 transition duration-300 transform hover:scale-[1.02] uppercase"
+          >
+            Quero eliminar o medo com o Método MASD!
+          </button>
         </div>
       </div>
     </section>

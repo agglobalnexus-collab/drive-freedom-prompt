@@ -1,73 +1,38 @@
-import { Award, Users, TrendingUp } from "lucide-react";
+import { Check } from "lucide-react";
 
 const AuthoritySection = () => {
   return (
-    <section className="py-20 px-4 bg-primary text-primary-foreground">
-      <div className="container max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="inline-block px-4 py-2 bg-accent/20 rounded-full mb-6">
-              <span className="text-accent font-semibold text-sm">Criadora do Método</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Conheça a <span className="text-accent">Psicóloga Márcia Mattos</span>
-            </h2>
-            <div className="space-y-4 text-primary-foreground/90 text-lg">
-              <p>
-                <strong className="text-primary-foreground">Psicóloga clínica especialista</strong> em ansiedade e medos, Márcia Mattos criou o Método MASD após anos de experiência ajudando mulheres a superarem o medo de dirigir.
-              </p>
-              <p>
-                O que antes era oferecido apenas em atendimentos presenciais de <strong className="text-accent">R$1.350</strong>, agora está acessível a todas as mulheres que desejam conquistar sua liberdade no volante.
-              </p>
-              <p>
-                Com uma abordagem que vai além da prática, Márcia trabalha a <strong className="text-primary-foreground">raiz emocional</strong> do medo, proporcionando resultados duradouros e transformadores.
-              </p>
-            </div>
-          </div>
-          
-          <div className="space-y-6">
-            <div className="bg-primary-foreground/10 backdrop-blur-sm p-6 rounded-2xl border border-primary-foreground/20">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Award className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Método Validado</h3>
-                  <p className="text-primary-foreground/80">
-                    Testado e aprovado em centenas de atendimentos presenciais
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-primary-foreground/10 backdrop-blur-sm p-6 rounded-2xl border border-primary-foreground/20">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Users className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Especialista em Ansiedade</h3>
-                  <p className="text-primary-foreground/80">
-                    Anos de experiência tratando medos e ansiedade na prática clínica
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-primary-foreground/10 backdrop-blur-sm p-6 rounded-2xl border border-primary-foreground/20">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <TrendingUp className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg mb-2">Resultados Comprovados</h3>
-                  <p className="text-primary-foreground/80">
-                    Mulheres de todo Brasil já conquistaram sua independência
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <section className="py-16 px-4 md:px-8">
+      <div className="container max-w-4xl mx-auto md:flex md:items-center md:space-x-8">
+        <div className="md:w-1/3 mb-6 md:mb-0 flex-shrink-0">
+          <img 
+            src="https://clinicasuperedirigindo.com.br/wp-content/uploads/2024/12/WhatsApp-Image-2024-11-15-at-13.31.30.jpeg" 
+            alt="Foto de Márcia Mattos, Psicóloga Clínica" 
+            className="w-48 h-48 mx-auto md:w-full md:h-auto rounded-full object-cover border-4 border-accent-gold shadow-2xl"
+          />
+        </div>
+
+        <div className="md:w-2/3 text-center md:text-left">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">
+            Quem está por trás do Método MASD?
+          </h2>
+          <p className="text-xl font-semibold text-muted-foreground mb-4">
+            Eu sou a <strong>Márcia Mattos</strong>, psicóloga clínica com anos de experiência em tratamentos de ansiedade e fobias.
+          </p>
+          <ul className="space-y-3 text-lg text-muted-foreground">
+            <li className="flex items-center justify-center md:justify-start">
+              <Check className="text-accent-green-dark mr-3 flex-shrink-0" />
+              Psicóloga especializada em <span className="font-bold text-accent-gold ml-1">medo e ansiedade</span>.
+            </li>
+            <li className="flex items-center justify-center md:justify-start">
+              <Check className="text-accent-green-dark mr-3 flex-shrink-0" />
+              Criadora do <span className="font-bold text-accent-gold ml-1">MASD</span> (Método de Autossuperação no Dirigir).
+            </li>
+            <li className="text-lg font-bold text-foreground mt-4">
+              <span className="text-accent-green-dark font-extrabold">Método Comprovado:</span>
+              {" "}Validado em atendimentos presenciais que custavam <span className="text-accent-gold">R$1.350,00</span>. Agora, totalmente online e acessível.
+            </li>
+          </ul>
         </div>
       </div>
     </section>

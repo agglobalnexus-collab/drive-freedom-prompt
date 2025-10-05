@@ -1,80 +1,45 @@
-import { Star } from "lucide-react";
-
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      video: "/videos/depoimento-isabel.mp4",
-      name: "Isabel",
-      result: "Conquistou autonomia e independência"
-    },
-    {
       video: "/videos/depoimento-1.mp4",
-      name: "Aluna MASD",
-      result: "Superou o medo e dirige com confiança"
+      quote: "Hoje eu dirijo para qualquer lugar, não sinto mais medo, mais ansiedade. Só tenho vontade de dirigir cada vez mais!"
     },
     {
       video: "/videos/depoimento-2.mp4",
-      name: "Aluna MASD",
-      result: "Realizou o sonho de dirigir"
+      quote: "Procurei a Supere e aqui encontrei todo o apoio. Hoje posso dizer que sou dona de mim, conduzindo o meu veículo."
     },
     {
       video: "/videos/depoimento-3.mp4",
-      name: "Aluna MASD",
-      result: "Transformou sua vida"
+      quote: "Em 7 dias eu voltei na Supere dirigindo meu carro. Impressionante! Era algo que eu tinha guardado dentro de mim."
+    },
+    {
+      video: "/videos/depoimento-isabel.mp4",
+      quote: "Eu tava vindo de táxi, decidida a renovar minha carteira. Já fiz minhas aulas e estou me sentindo maravilhada, maravilhada!"
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-muted/30">
+    <section className="py-16 px-4 md:px-8 bg-secondary-dark">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="flex justify-center gap-1 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-6 h-6 fill-accent text-accent" />
-            ))}
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Histórias de <span className="text-accent">transformação</span> reais
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Veja o que alunas que já conquistaram sua liberdade têm a dizer
-          </p>
-        </div>
+        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
+          O Resultado de quem <span className="text-accent-gold font-bold">confiou na Márcia</span>
+        </h2>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial, index) => (
-            <div 
-              key={index}
-              className="bg-card rounded-2xl overflow-hidden shadow-[0_10px_40px_-10px_hsl(var(--green-dark)/0.15)] border border-border hover:shadow-[0_15px_50px_-10px_hsl(var(--green-dark)/0.2)] transition-all duration-300"
-            >
-              <div className="aspect-video bg-primary/5">
-                <video 
-                  controls 
-                  className="w-full h-full object-cover"
-                  preload="metadata"
-                >
-                  <source src={testimonial.video} type="video/mp4" />
-                  Seu navegador não suporta o elemento de vídeo.
-                </video>
-              </div>
-              <div className="p-6">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                  ))}
-                </div>
-                <p className="font-bold text-foreground mb-1">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.result}</p>
-              </div>
+            <div key={index} className="bg-card p-3 rounded-xl shadow-2xl border-2 border-accent-gold">
+              <video controls className="w-full rounded-lg mb-3">
+                <source src={testimonial.video} type="video/mp4" />
+                Seu navegador não suporta o elemento de vídeo.
+              </video>
+              <p className="text-md font-semibold text-foreground">"{testimonial.quote}"</p>
             </div>
           ))}
         </div>
         
-        <div className="mt-12 text-center">
-          <p className="text-lg text-muted-foreground italic">
-            "Tinha CNH há 6 anos e nunca dirigi sozinha. Em poucos dias já estava dirigindo sem medo."
-          </p>
-        </div>
+        <p className="text-center text-muted-foreground italic mt-8">
+          Depoimentos reais de alunas que superaram o medo e conquistaram sua liberdade.
+        </p>
       </div>
     </section>
   );
